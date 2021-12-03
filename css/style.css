@@ -1,0 +1,532 @@
+/* ==========BASIC UNIVERSAL STYLING & CLEAN UP============= */
+    /* some basic css resetting */
+    * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+    }
+
+body { margin: 0; box-sizing: border-box; }
+a { text-decoration: none; color:black; }
+
+@font-face{
+    font-family: 'stix';
+    src: url(../fonts/STIXGeneral.otf);
+    font-style: normal;
+    font-weight: 100;
+}
+
+@keyframes bounce{
+    0%{
+        transform: translateY(-12px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+/* ==========HEADER============= */
+/* ==========LOGO============= */
+/* ==========NAVIGATION============= */
+
+li, a{
+    color: #DDDDDD;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: light;
+    font-weight: 100;
+    font-size: 22px;
+    text-decoration: none;
+}
+   
+header{
+    width: 100vw;
+    background-color: #1A1A1A;
+    margin: 0;
+    padding: 0; 
+    justify-content: space-between; 
+    position: fixed;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index:1;
+}
+
+.logo{
+    height: 70px;
+    width: 150px;
+    cursor: pointer;
+    margin-right: auto;
+    padding: 10px 7vw;
+}
+
+nav {
+    margin-right: 8vw;
+}
+
+li{
+    display: inline-block;
+    padding: 0 3vw;
+}
+
+a:hover, a:active{
+    color: #9B2032;
+    text-decoration: underline;
+    transition: ease all .2s;
+}
+
+label, #burger{
+    display: none;
+}
+
+/* ==========MAIN BODY CONTENT============= */
+section{
+    height: 100vh;
+}
+
+/* ==========SECTION 1 STYLING (Home)============= */
+
+#home{
+    background-image: url("../images/HeaderImg.jpg");
+    position: relative;
+}
+
+.introduction{
+    color: #DDDDDD;
+    top: 47%;
+    position: relative;
+    width: 60vw;
+}
+
+h1{
+    font-family: stix;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 3em;
+    text-align: center;
+}
+
+.introduction h2{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: light;
+    font-weight: 100;
+    font-size: 35px;
+    text-align: center;
+}
+
+.nav-arrow{
+    text-align: center; 
+    height: 10%;
+    position: absolute;
+    left: 48%;
+    bottom: 0;
+    width: auto;
+}
+
+.nav-arrow img{
+    width: auto;
+    height: 60%;
+    animation:bounce 0.6s alternate;
+    animation-iteration-count: infinite;
+}
+
+/* ==========SECTION 2 STYLING (Gallery)============= */
+
+#gallery{
+    background-color: #DDDDDD;
+}
+
+.gallery-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    padding-top: 5%;
+}
+
+.gallery-image{
+    position: relative;
+    display: inline-block;
+    padding: 15px;  
+    margin: auto 0; 
+    opacity: 1;
+}
+
+.gallery-image img{
+    border-radius: 5px;
+    width: 30vw;
+}
+
+.gallery-image :not(img){
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    text-align: center;
+    width: 100%;
+    opacity: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: light;
+    font-weight: 100;
+}
+
+.gallery-image img:hover{
+    opacity: .4;
+    transition: 0.3s; 
+}
+
+.gallery-image:hover :not(img){
+    opacity: 1;
+    transition: 0.3s; 
+}
+
+/* ==========SECTION 3 STYLING (About)============= */
+
+#about{
+    background-color: #9B2032;
+}
+
+form{
+    width: 50vw;
+}
+
+.about-container{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+.about-text{
+    width: 50%;
+    font-family: 'GillSansLight';
+    font-weight: 100;
+    text-align: center;
+    margin: auto;
+    color: #DDDDDD;
+    line-height: 1.5;
+}
+
+.ivyportrait{
+    position: relative;  /*static*/
+    padding: 2%;
+    margin: auto 0; 
+    border-radius: 5px;
+    width: 50%; /*100%*/
+}
+
+.ivyportrait img{
+    position: relative;
+    margin: auto;
+    display: block;
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    width: 25vw;
+}
+
+.about-text h2{
+    font-family: stix;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 3em; 
+    margin-left: 40%;
+}
+
+.about-text p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size:100%;
+    margin-left: 40%;
+}
+
+/* ==========SECTION 4 STYLING (Contact)============= */
+
+#contact{
+    background-color: #DDDDDD;
+}
+
+#contact-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+.about-mailform{
+    position: relative;
+    margin: auto 0; 
+    width: 50%; 
+    height: 100%;
+    text-align: center;
+}
+
+#contact h2{
+    position: relative;
+    margin: auto;
+    top: 15%;
+    font-family: stix;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 35px;
+    color: #9B2032;
+}
+
+.about-mailform form{
+    position: absolute;
+    margin: auto;
+    display: block;
+    top: 0; 
+    left: 0; 
+    right: 0;
+    bottom: 0; 
+    width: 80%;
+    height: 50%;
+    border-radius: 5px;
+}
+
+.inputtext{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: light;
+    font-weight: 100;
+    width: 100%;
+    height: 10%;
+    color: #DDDDDD;
+    background-color: #9B2032;
+    font-size: 15px;
+    margin-bottom: 15px;
+    display: block;
+    border-radius: 5px;
+    margin: 0 auto 3% auto;
+}
+
+::placeholder{
+    color: #DDDDDD;
+    font-style: italic;
+    opacity: .5;
+    padding-left: 4%;
+}
+
+.inputmessage{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: light;
+    font-weight: 100;
+    width: 100%;
+    height: 70%;
+    color: #DDDDDD;
+    background-color: #9B2032;
+    font-size: 15px;
+    display: block;
+    resize: none;
+    border-radius: 5px;
+    margin: 0 auto 3% auto;
+}
+
+.inputmessage::placeholder{
+    padding-top: 15px; 
+}
+
+.submitbutton{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: light;
+    font-weight: 100;
+    background-color: #9B2032;
+    color:#DDDDDD;
+    font-size: 15px;
+    border: 1px;
+    clear: both;
+    margin: 0 auto 0 auto;
+    bottom: 0;
+    display: block;
+    height: 3em;
+    width: 5em;
+    transition: ease all .2s;
+    border-radius: 5px;
+}
+
+.submitbutton:hover{
+    cursor: pointer;
+    height: 3.2em;
+    width: 5.4em;
+}
+
+.about-maps{
+    position: relative;
+    margin: auto 0; 
+    width: 50%; 
+    height: 100%;
+}
+
+.about-maps iframe{
+    position: absolute;
+    margin: auto;
+    display: block;
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    width: 80%;
+    height: 50%;
+    border-radius: 5px;
+}
+
+
+/* ==========FOOTER STYLIING============= */
+
+
+
+
+/* ==========RESPONSIVE DESIGN============= */
+
+/* ===== 5K RETINA MAC LABS: Media queries for Curtin Uni mac lab testing only ===== */
+@media only screen and (max-width: 5120px) {
+
+        
+}
+
+/* ===== DESKTOP HD: Media queries for most HD desktops ===== */
+@media only screen and (max-width: 1920px) {
+    
+    
+}
+
+/* ===== SMALL DESKTOP: Media queries for laptop/small desktop ===== */
+@media only screen and (max-width: 1366px) { 
+    
+}
+
+/* ===== TABLET: Media queries for verticle and horizontal ===== */
+@media only screen and (max-width: 1024px) { 
+    
+    .introduction{
+        color: #DDDDDD;
+        top: 47%;
+        position: relative;
+        width: 100vw;
+    }
+
+    .gallery-image img{
+        border-radius: 5px;
+        width: 33vw;
+    }
+
+    .gallery-container{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        height: 90vh;
+        padding-top: 9%;
+    }
+    
+    .gallery-image{
+        position: relative;
+        display: inline-block;
+        padding: 15px;  
+        margin: auto 0; 
+        opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 768px) { 
+
+    li{
+        padding: 0 2vw;
+    }
+    
+    .gallery-image{
+        position: relative;
+        display: inline-block;
+        padding: 5px;  
+        margin: auto 0; 
+        opacity: 1;
+    }
+    
+    #about{
+        height: fit-content;
+    }
+
+    form{
+        width: 50vw;
+    }
+    
+    .about-container{
+        position: static;
+        display: block !important;
+        justify-content: center;
+        height: 100%;
+    }
+    
+    .about-text{
+        width: 90%;
+        font-family: 'GillSansLight';
+        font-weight: 100;
+        text-align: center;
+        color: #DDDDDD;
+        line-height: 1.5;
+        padding: 5% 0;
+    }
+    
+    .ivyportrait{
+        position: static;  /*static*/
+        padding: 0;
+        margin: auto 0; 
+        border-radius: 5px;
+        width: 100%; /*100%*/
+    }
+    
+    .ivyportrait img{
+        position: static;
+        width: 40vw;
+    }
+    
+    .about-text h2{
+        font-family: stix;
+        font-style: normal;
+        font-weight: 100;
+        font-size: 3em; 
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .about-text p{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size:100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* ==========SECTION 4 STYLING (Contact)============= */
+
+}
+
+/* ===== MOBILE: Media queries for small mobile resolution. ===== */
+@media only screen and (max-width: 360px) { 
+    
+    label{
+        display: block;
+        font-size: 40px;
+        color: #DDDDDD;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    nav input:checked ~ ul{
+        display: block; 
+    }
+
+    nav ul li{
+        display: block;
+        border-top: solid 1px #DDDDDD;
+        background-color: #9B2032;
+    }
+    .nav-arrow{
+        left: 43%;
+    }
+}
